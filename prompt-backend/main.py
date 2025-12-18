@@ -61,7 +61,7 @@ async def generate_prompt(req: PromptRequest):
         )
 
         # Call Gemini model
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-pro")
         response = model.generate_content(instruction)
         clean_text = response.text.strip().replace("\n", " ")
 
@@ -83,7 +83,7 @@ async def smart_optimize(req: SmartOptimizeRequest):
             num_variants=req.num_variants
         )
 
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-pro")
         response = model.generate_content(instruction)
         raw_text = response.text.strip()
 
