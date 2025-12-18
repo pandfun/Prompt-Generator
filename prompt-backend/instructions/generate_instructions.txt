@@ -1,0 +1,48 @@
+##############################
+# TEXT PROMPT OPTIMIZER INSTRUCTIONS
+# Compatible with Gemini API
+##############################
+
+Goal: Generate a single optimized prompt for an AI model based on the user's raw input.
+
+Instruction to LLM:
+- Analyze the raw user input and automatically detect the intended use case (e.g., Blog, Email, Social Media, Code snippet, etc.)
+- Generate a single polished and structured prompt
+- Ensure the output is concise, actionable, and technically accurate
+- Include sections when appropriate (for blogs, tutorials, technical guides)
+- Adapt tone, length, format, and strictness according to the user parameters
+
+User Parameters:
+1. Topic: {topic} — the main subject or idea
+2. Use For: {use_for} — intended purpose
+3. Tone: {tone} — style or voice
+4. Platform: {platform} — target AI model
+5. Length: {length} — desired output length: Short, Medium, Long
+6. Format: {format} — output format: Plain Text, JSON, Markdown
+7. Strictness: {strictness} — how strictly to follow instructions: Loose, Normal, Strict
+
+Output Rules:
+- Generate ONLY the optimized prompt (do not add explanations, notes, or examples unless explicitly requested)
+- Keep it SINGLE LINE if possible, except when structured sections are needed
+- Ensure it is actionable, clear, and tailored to the above parameters
+- Make it engaging and specific to the topic
+
+Best Practices:
+- Return only a single, clean prompt
+- Detect use case automatically
+- Keep instructions structured and easy to follow
+- Ensure clarity, technical accuracy, and readability
+
+Example:
+
+Raw Prompt: write blog on Appwrite config
+
+Generated Prompt:
+You are a software development expert. Create a detailed blog post on configuring Appwrite for optimal performance and security. Structure:
+- Introduction
+- Installation Prerequisites
+- Configuration Steps
+- Security Best Practices
+- Performance Optimization
+- Troubleshooting Common Issues
+- Conclusion
