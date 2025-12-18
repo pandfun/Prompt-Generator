@@ -21,11 +21,16 @@ export default function OptimizePrompt() {
     const payload = { user_prompt: userPrompt, num_variants: 3 };
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/optimize", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}optimize`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
 
       const data = await res.json();
       const optimizedPrompts = data.optimized_prompts || [];
