@@ -1,7 +1,5 @@
 # PromptGen - EL 7th Sem Project
 
-![Logo](./prompt-frontend/public/ss1.png)
-
 This project is a full-stack application that allows users to generate, optimize, and manage AI prompts using popular AI providers (e.g., Gemini, GPT, Claude). It provides a modern frontend built with React + Material UI and a backend powered by FastAPI. Users can generate optimized prompts, view their history, and copy results easily.
 
 ## Features
