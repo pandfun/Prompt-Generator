@@ -1,4 +1,4 @@
-# PromptGen - AI Prompt Generator & Optimizer
+# PromptGen - EL 7th Sem Project
 
 ![Logo](./prompt-frontend/public/ss1.png)
 
@@ -100,9 +100,6 @@ POST /optimize
 
 - Advanced analytics (prompt effectiveness scoring)
 - Add  Image and Video prompt generation
-## Authors
-
-- [@ashishalf](https://github.com/ashishalf)
 
 
 ## Contributing
@@ -116,8 +113,4 @@ Contributions are always welcome!
 - Commit changes
 
 - Push & create a PR
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 

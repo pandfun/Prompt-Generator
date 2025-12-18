@@ -32,7 +32,7 @@ export default function MainLayout() {
       {/* Footer */}
       <Box sx={{ textAlign: "center", py: 2, bgcolor: "background.paper" }}>
         <Typography variant="body2">
-          Created with ❤️ by Ashish
+          EL 7th Sem Project - Prompt Engineering
         </Typography>
       </Box>
     </BrowserRouter>
