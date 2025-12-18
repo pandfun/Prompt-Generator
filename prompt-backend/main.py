@@ -11,6 +11,8 @@ import traceback
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
+MODEL = "gemini-2.5-flash"
+
 app = FastAPI()
 
 
@@ -61,7 +63,7 @@ async def generate_prompt(req: PromptRequest):
         )
 
         # Call Gemini model
-        model = genai.GenerativeModel("gemini-pro")
+        model = genai.GenerativeModel(MODEL)
         response = model.generate_content(instruction)
         clean_text = response.text.strip().replace("\n", " ")
 
@@ -83,7 +85,7 @@ async def smart_optimize(req: SmartOptimizeRequest):
             num_variants=req.num_variants
         )
 
-        model = genai.GenerativeModel("gemini-pro")
+        model = genai.GenerativeModel(MODEL)
         response = model.generate_content(instruction)
         raw_text = response.text.strip()
 
