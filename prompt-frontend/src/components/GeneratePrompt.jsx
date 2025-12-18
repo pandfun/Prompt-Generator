@@ -50,7 +50,13 @@ export default function GeneratePrompt() {
       );
 
       const data = await res.json();
-      setResult(data.generated_prompt || "Error generating prompt");
+
+      if (!res.ok) {
+        setResult(`❌ Backend error: ${data.detail || data.error || "Unknown error"}`);
+        return;
+      }
+
+setResult(data.generated_prompt);
 
       // Save to history
       const history = JSON.parse(localStorage.getItem("prompt_history") || "[]");

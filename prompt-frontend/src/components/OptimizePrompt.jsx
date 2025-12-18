@@ -33,6 +33,11 @@ export default function OptimizePrompt() {
       );
 
       const data = await res.json();
+      if (!res.ok) {
+        setResult(`❌ Backend error: ${data.detail || data.error || "Unknown error"}`);
+        return;
+      }
+
       const optimizedPrompts = data.optimized_prompts || [];
       setVariants(optimizedPrompts);
 
