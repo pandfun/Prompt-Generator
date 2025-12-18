@@ -4,6 +4,8 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import HTTPException
+import traceback
 
 # Load API Key
 load_dotenv()
@@ -66,7 +68,8 @@ async def generate_prompt(req: PromptRequest):
         return {"generated_prompt": clean_text}
     
     except Exception as e:
-        return {"error": str(e)}
+        print(traceback.format_exc())
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/optimize")
 async def smart_optimize(req: SmartOptimizeRequest):
@@ -91,4 +94,5 @@ async def smart_optimize(req: SmartOptimizeRequest):
         return {"optimized_prompts": scored_variants}
     
     except Exception as e:
-        return {"error": str(e)}
+        print(traceback.format_exc())
+        raise HTTPException(status_code=500, detail=str(e))
